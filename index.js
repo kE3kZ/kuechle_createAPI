@@ -40,12 +40,11 @@ app.get(`/getUser`, (req, res) => {
     }
 });
 
-app.post(`/addUser`, (req,res) =>{
-    try {
-        let userVar = req.body.object.user;
+try {
+     let userVar = req.body.user.username;
 
-        console.log(userVar);
-        return res.status(200).json("Added user" + userVar + "successfully");
+      console.log(userVar);
+      return res.status(200).json("Added user" + userVar + "successfully");
     }
     catch{
         return res.status(500);
